@@ -1,4 +1,4 @@
-# 🍔 B-Food: Aplicação de Algoritmos de Busca
+# 🍔 Mini-iFood: Aplicação de Algoritmos de Busca
 
 Este projeto foi desenvolvido como trabalho semestral para demonstrar a aplicação prática de **Algoritmos de Busca** em um cenário real: um sistema simplificado de delivery de comida.
 
@@ -43,4 +43,4 @@ Este projeto foi desenvolvido em **Python**. Para rodar na sua máquina, siga os
 1. Abra o terminal.
 2. Navegue até a pasta do projeto.
 3. Execute o programa:
-   python b_food.py
+   python mini_ifood.py
