@@ -25,7 +25,9 @@ restaurantes = [
 entregadores = [
     Entregador(1, "Jean", True, 3, 4),
     Entregador(2, "Maria", False, 9, 2),
-    Entregador(3, "Paulo", True, 5, 8),
-    Entregador(4, "Ana beatriz", True, 1, 6)
+    Entregador(3, "Pedro", True, 5, 8),
+    Entregador(4, "Ana", True, 1, 6)
 ]        
 
+def calcular_distancia(x1, y1, x2, y2):
+    return abs(x1 - x2) + abs(y1 - y2)
