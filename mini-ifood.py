@@ -31,3 +31,20 @@ entregadores = [
 
 def calcular_distancia(x1, y1, x2, y2):
     return abs(x1 - x2) + abs(y1 - y2)
+def busca_binaria_restaurante(restaurantes, id_procurado):
+    inicio = 0
+    fim = len(restaurantes) - 1
+
+    while inicio <= fim:
+        meio = (inicio + fim) // 2
+
+        if restaurantes[meio].id == id_procurado:
+            return restaurantes[meio]
+
+        elif id_procurado < restaurantes[meio].id:
+            fim = meio - 1
+
+        else:
+            inicio = meio + 1
+
+    return None
