@@ -13,3 +13,38 @@ class Entregador:
         self.x = x
         self.y = y
 
+restaurantes = [
+    Restaurante(1, "Pina hamburguers", 2, 5),
+    Restaurante(2, "Boa comida", 8, 3),
+    Restaurante(3, "Nonna Ristorante", 4, 9),
+    Restaurante(4, "Mia madre italiana", 1, 2),
+    Restaurante(5, "Cantina da massa", 7, 7)
+]
+
+
+entregadores = [
+    Entregador(1, "Jean", True, 3, 4),
+    Entregador(2, "Maria", False, 9, 2),
+    Entregador(3, "Pedro", True, 5, 8),
+    Entregador(4, "Ana", True, 1, 6)
+]        
+
+def calcular_distancia(x1, y1, x2, y2):
+    return abs(x1 - x2) + abs(y1 - y2)
+def busca_binaria_restaurante(restaurantes, id_procurado):
+    inicio = 0
+    fim = len(restaurantes) - 1
+
+    while inicio <= fim:
+        meio = (inicio + fim) // 2
+
+        if restaurantes[meio].id == id_procurado:
+            return restaurantes[meio]
+
+        elif id_procurado < restaurantes[meio].id:
+            fim = meio - 1
+
+        else:
+            inicio = meio + 1
+
+    return None
