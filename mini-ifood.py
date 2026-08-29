@@ -31,6 +31,7 @@ entregadores = [
 
 def calcular_distancia(x1, y1, x2, y2):
     return abs(x1 - x2) + abs(y1 - y2)
+
 def busca_binaria_restaurante(restaurantes, id_procurado):
     inicio = 0
     fim = len(restaurantes) - 1
@@ -48,3 +49,17 @@ def busca_binaria_restaurante(restaurantes, id_procurado):
             inicio = meio + 1
 
     return None
+
+def busca_sequencial_entregador(lista_entregadores, rest_x, rest_y):
+    melhor_entregador = None
+    menor_distancia = float('inf')  
+    
+    for entregador in lista_entregadores:
+        if entregador.disponivel:
+            dist = calcular_distancia(entregador.x, entregador.y, rest_x, rest_y)
+            
+            if dist < menor_distancia:
+                menor_distancia = dist
+                melhor_entregador = entregador
+                
+    return melhor_entregador, menor_distancia
