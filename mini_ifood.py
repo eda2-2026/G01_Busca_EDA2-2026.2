@@ -1,3 +1,5 @@
+import json
+
 class Restaurante:
     def __init__(self, id_rest, nome, x, y):
         self.id = id_rest
@@ -13,35 +15,23 @@ class Entregador:
         self.x = x
         self.y = y
 
-restaurantes = [
-    Restaurante(1, "Pina hamburguers", 2, 5),
-    Restaurante(2, "Boa comida", 8, 3),
-    Restaurante(3, "Nonna Ristorante", 4, 9),
-    Restaurante(4, "Mia madre italiana", 1, 2),
-    Restaurante(5, "Cantina da massa", 7, 7)
-]
-
-
-entregadores = [
-    Entregador(1, "Jean", True, 3, 4),
-    Entregador(2, "Maria", False, 9, 2),
-    Entregador(3, "Pedro", True, 5, 8),
-    Entregador(4, "Ana", True, 1, 6)
-]   
-
+restaurantes = []
+entregadores = []
 hash_restaurantes = {}
 
-for r in restaurantes:
-    chave = r.nome.lower()
-    hash_restaurantes[chave] = r
-
-def busca_hash_por_nome(nome_digitado):
-    nome_limpo = nome_digitado.lower().strip()
-
-    return hash_restaurantes.get(nome_limpo, None)
-
-def calcular_distancia(x1, y1, x2, y2):
-    return abs(x1 - x2) + abs(y1 - y2)
+# Abre o arquivo JSON e lê os dados
+with open('dados.json', 'r', encoding='utf-8') as arquivo:
+    dados = json.load(arquivo)
+    
+    for r in dados['restaurantes']:
+        novo_restaurante = Restaurante(r['id'], r['nome'], r['x'], r['y'])
+        restaurantes.append(novo_restaurante)
+    
+        hash_restaurantes[novo_restaurante.nome.lower()] = novo_restaurante
+        
+    for e in dados['entregadores']:
+        novo_entregador = Entregador(e['id'], e['nome'], e['disponivel'], e['x'], e['y'])
+        entregadores.append(novo_entregador)
 
 def busca_binaria_restaurante(restaurantes, id_procurado):
     inicio = 0
@@ -61,6 +51,10 @@ def busca_binaria_restaurante(restaurantes, id_procurado):
 
     return None
 
+def busca_hash_por_nome(nome_digitado):
+    nome_limpo = nome_digitado.lower().strip()
+    return hash_restaurantes.get(nome_limpo, None)
+
 def busca_sequencial_entregador(lista_entregadores, rest_x, rest_y):
     melhor_entregador = None
     menor_distancia = float('inf')  
@@ -74,4 +68,9 @@ def busca_sequencial_entregador(lista_entregadores, rest_x, rest_y):
                 melhor_entregador = entregador
                 
     return melhor_entregador, menor_distancia
+
+def calcular_distancia(x1, y1, x2, y2):
+    return abs(x1 - x2) + abs(y1 - y2)
+
+
 
