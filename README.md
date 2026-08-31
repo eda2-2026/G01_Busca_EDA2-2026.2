@@ -4,7 +4,7 @@ Este projeto foi desenvolvido como trabalho semestral para demonstrar a aplicaç
 
 ---
 
-## 👥 Equipe
+## Equipe
 * **Semestre:** 2026.2
 * **Desenvolvedores:**
   * Dara Maria Barbosa de Sousa - Matrícula: 202046040
@@ -12,12 +12,22 @@ Este projeto foi desenvolvido como trabalho semestral para demonstrar a aplicaç
 
 ---
 
-## 🎯 Objetivo do Projeto
+## Objetivo do Projeto
 O objetivo deste sistema é simular a lógica de roteamento de um aplicativo de delivery utilizando estruturas de dados e algoritmos desenvolvidos em **Python**. O programa mapeia restaurantes, entregadores e clientes em um plano cartesiano (X, Y) e utiliza diferentes estratégias de busca para processar um pedido de forma eficiente. Todo o sistema interage com o usuário através de uma **Interface Web interativa**, construída com a biblioteca Streamlit.
 
 ---
 
-## 🧠 Algoritmos e Conceitos Aplicados
+## Arquitetura do Sistema
+
+Para garantir que o código fosse escalável e organizado, o projeto foi dividido utilizando o padrão de responsabilidades (inspirado em MVC):
+* **`app.py` (Front-end):** Interface gráfica e interações com o usuário.
+* **`mini_ifood.py` (Back-end):** Lógica matemática e Algoritmos de busca.
+* **`dados.json` (Database):** Armazenamento das entidades de forma independente.
+* **`gerar_dados.py` (Mock Data):** Script gerador de grande volume de dados simulados (100+ restaurantes e 50+ entregadores) para estressar e provar a eficiência dos algoritmos de busca.
+
+---
+
+## Algoritmos e Conceitos Aplicados
 
 Para otimizar o desempenho do sistema, aplicamos a ferramenta certa para cada tipo de dado. O projeto demonstra três complexidades de tempo diferentes:
 
@@ -40,7 +50,7 @@ Para otimizar o desempenho do sistema, aplicamos a ferramenta certa para cada ti
 
 ---
 
-## 🛠️ Como Executar
+## Como Executar
 
 Este projeto foi desenvolvido dividindo a lógica no *Back-end* (`mini_ifood.py`) e a interface gráfica no *Front-end* (`app.py`).
 
@@ -54,11 +64,17 @@ Para rodar na sua máquina, siga os passos abaixo:
 ```
 
 3. Navegue até a pasta do projeto.
-4. Execute o servidor local da aplicação:
+4. (Opcional) Gere um banco de dados novo e aleatório com 150 entidades executando:
+
+ ```bash
+  python gerar_dados.py
+
+```
+5. Execute o servidor local da aplicação:
 ```bash
-streamlit run app.py
+  streamlit run app.py
 
 ```
 
-5. O seu navegador padrão abrirá automaticamente com o aplicativo rodando!
+6. O seu navegador padrão abrirá automaticamente com o aplicativo rodando!
 
