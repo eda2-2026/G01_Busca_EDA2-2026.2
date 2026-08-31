@@ -8,7 +8,7 @@ Este projeto foi desenvolvido como trabalho semestral para demonstrar a aplicaç
 * **Semestre:** 2026.2
 * **Desenvolvedores:**
   * Dara Maria Barbosa de Sousa - Matrícula: 202046040
-  * Evellyn de Sousa Rocha  - Matrícula: [Inserir Matrícula Aqui]
+  * Evellyn de Sousa Rocha  - Matrícula: 202045400
 
 ---
 
