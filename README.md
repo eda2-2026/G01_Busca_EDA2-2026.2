@@ -1,4 +1,4 @@
-#  Mini-iFood: Aplicação de Algoritmos de Busca
+#   Aplicação de Algoritmos de Busca
 
 Este projeto foi desenvolvido como trabalho semestral para demonstrar a aplicação prática de **Algoritmos de Busca** em um cenário real: um sistema simplificado de delivery de comida.
 
